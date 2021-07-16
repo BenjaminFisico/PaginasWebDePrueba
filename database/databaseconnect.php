@@ -1,16 +1,14 @@
 <?php
-    class BaseDatos extends SQLite3
-    {
-        function __construct(){
-            $this->open("mydatabase.db");
-        }
-    }
-
-    $db = new BaseDatos();
-    if($db) {
-        echo "<p> la conexion a sido exitosa  :D";
-    } else {
-        echo "<p> la conexion no a sido exitosa  D:";
-    }
-    
+$servername = "localhost";
+$database = "basededatospag";
+$username = "Benjamin";
+$password = "513051";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+mysqli_close($conn);
 ?>
